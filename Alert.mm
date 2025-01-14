@@ -3,18 +3,18 @@
 __attribute__((constructor))
 static void showAlertAfterLaunch() {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
-                                                                       message:@"BIO.CTDOTECH.TECH"
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Văn Thành IOS "
+                                                                       message:@"Nhớ Like And Subscribe"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Xong"
                                                      style:UIAlertActionStyleDefault
                                                    handler:nil];
-        [ok setValue:[UIColor redColor] forKey:@"titleTextColor"];
+        [ok setValue:[UIColor blueColor] forKey:@"titleTextColor"];
         [alert addAction:ok];
-        UIAlertAction *openLink = [UIAlertAction actionWithTitle:@"Open Web"
+        UIAlertAction *openLink = [UIAlertAction actionWithTitle:@"Kênh YTB"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-            NSURL *url = [NSURL URLWithString:@"https://bio.ctdotech.tech/dothanh1110"];
+            NSURL *url = [NSURL URLWithString:@"https://youtube.com/@thanhdzso1"];
             if ([[UIApplication sharedApplication] canOpenURL:url]) {
                 [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
             }
