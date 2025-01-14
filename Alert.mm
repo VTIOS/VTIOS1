@@ -23,6 +23,20 @@ static void showAlertAfterLaunch() {
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
                                                                                      animated:YES
                                                                                    completion:nil];
+
+
+UIAlertAction *openLink = [UIAlertAction actionWithTitle:@"Kênh YTB"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+            NSURL *url = [NSURL URLWithString:@"https://youtube.com/@thanhdzso1"];
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            }
+        }];
+        [alert addAction:openLink];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
+                                                                                     animated:YES
+                                                                                   completion:nil];
     });
 }
 
